@@ -1,0 +1,49 @@
+.blogs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* Make background transparent */
+    padding: 20px;
+    /* Set a maximum width for the entire container */
+    margin: auto; /* Center the container */
+  }
+  
+  .horizontal-scroller {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%; /* Take the full width of the parent */
+     /* Match the container's max width */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .horizontal-scroller::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Webkit browsers */
+  }
+  
+  .card {
+    min-width: 300px; /* Set a minimum width for each card */
+    margin: 0 10px; /* Margin between cards */
+    flex: none; /* Prevent flex items from shrinking */
+    background-color: #fff; /* Set card background color */
+    border-radius: 10px; /* Round corners */
+    padding: 20px; /* Add padding inside cards */
+    text-align: center; /* Center text */
+    transition: transform 0.2s; /* Smooth transition on hover */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }
+  
+  .card img {
+    max-width: 100%; /* Responsive image */
+    border-radius: 10px; /* Round image corners */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

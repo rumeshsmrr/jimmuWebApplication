@@ -1,0 +1,135 @@
+/* Container for the card */
+.card-container {
+    background-color: rgba(255, 255, 255, 0.35);
+    padding: 20px; /* Reduced padding for better fitting */
+    margin: 40px 0 60px;
+    border-radius: 25px;
+    box-shadow: 0px 36px 60px 0px rgba(23, 14, 100, 0.1);
+    width: 500px; /* Fixed width for horizontal scroll */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden; /* Hides overflow content */
+    height: 600px; /* Fixed height for uniformity */
+}
+
+/* Ensuring the card does not change size */
+.card-container:hover {
+    transform: scale(1.05); /* Adds a subtle hover effect */
+}
+
+/* Styling for the image */
+.card-image-link {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the image horizontally */
+}
+
+.card-image {
+    width: 100%; /* Keep full width */
+    height: auto; /* Auto height */
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out; /* Add width transition */
+}
+
+/* Expanded state for the image */
+.card-image.expanded {
+    width: 70%; /* Adjust width for expanded state */
+}
+
+/* Card content area */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between content */
+    text-align: left;
+    overflow: hidden; /* Prevents content overflow */
+    flex-grow: 1; /* Allow content to grow and fill space */
+}
+
+/* Card title styling */
+.card-title-link {
+    color: #170e64;
+    text-decoration: none;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center title horizontally */
+}
+
+.card-title {
+    font-size: 1.1em; /* Reduced size for the title */
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+    background-color: #170e64;
+    height: 60px;
+    padding: 20px 20px 0 20px;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    top: -5px;
+    width: 80%; /* Ensure the title takes full width for centering */
+    text-align: center; /* Center text within the title */
+}
+
+/* Expanded state for the title */
+.card-title.expanded {
+    font-size: 1.3em; /* Slightly increase size for expanded state */
+}
+
+/* Meta information (author and date) */
+.post-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inner-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-date {
+    font-size: 0.85em;
+    color: #777;
+}
+
+/* Excerpt */
+.card-excerpt {
+    font-size: 0.95em; /* Regular size */
+    color: #555;
+    margin: 15px 0;
+    line-height: 1.4;
+    overflow: hidden; /* Hide any overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Expanded state for the excerpt */
+.card-excerpt.expanded {
+    font-size: 1.1em; /* Increase size for expanded state */
+    display: block; /* Ensure block display */
+    overflow: visible; /* Allow overflow in expanded state */
+    white-space: normal; /* Allow wrapping */
+}
+
+/* Read more button */
+.read-more-button {
+    color: #ffffff;
+    background-color: #ef3273;
+    padding: 8px 25px;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 0.95em;
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+
+.read-more-button:hover {
+    background-color: #d22665;
+}
