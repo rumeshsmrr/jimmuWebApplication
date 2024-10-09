@@ -60,7 +60,7 @@
 }
 
 .card-title {
-    font-size: 1.3em; /* Regular size */
+    font-size: 18px ;/* Regular size */
     font-weight: bold;
     margin: 0;
     color: #ffffff;
@@ -68,7 +68,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     background-color: #42b490;
-    height: 20px;
+    
     padding: 20px;
     border-radius: 0 0 20px 20px;
     position: relative;
@@ -140,23 +140,53 @@
         background: linear-gradient(to right, #42b490, #1b929a);
     }
 }
+@keyframes gradient-animation {
+    0% {
+        background: linear-gradient(to right, #42b490, #1b929a);
+    }
+    50% {
+        background: linear-gradient(to left, #42b490, #1b929a);
+    }
+    100% {
+        background: linear-gradient(to right, #42b490, #1b929a);
+    }
+  }
+    .read-more-button{
+         
+         color: #ffffff;
+    background: linear-gradient(to right, #42b490, #1b929a);
+    padding: 8px 25px;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-block;
 
-.read-more-button {
+    font-size: 0.95em;
+    margin-top: auto;
+    text-align: center;
+      
+    }
+    
+    .read-more-button:hover {
+      background: linear-gradient(to right,#1b929a, #42b490);
+    }
+    
+  
+/* .read-more-button {
     color: #ffffff;
     background: linear-gradient(to right, #42b490, #1b929a);
     padding: 8px 25px;
     border-radius: 100px;
     text-decoration: none;
     display: inline-block;
-    transition: background 1s ease-in-out; /* Smooth transition for background */
+
     font-size: 0.95em;
     margin-top: auto;
     text-align: center;
 }
 
 .read-more-button:hover {
-    animation: gradient-animation 5s ease-in-out infinite; /* Add animation on hover */
-}
+    background: linear-gradient(to right, #42b490, #1b929a); 
+} */
 
 /* Tablet styles */
 @media (max-width: 769px) {

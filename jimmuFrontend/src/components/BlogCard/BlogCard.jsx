@@ -20,7 +20,7 @@ const BlogCard = ({ imageUrl, title, date, excerpt }) => {
       </div>
       <div className="card-content">
         <div className="card-title-link">
-          <h3 className={`card-title ${isExpanded ? 'expanded' : ''}`}>{title}</h3> {/* Add class conditionally */}
+          <div className={`card-title ${isExpanded ? 'expanded' : ''}`}>{title}</div> {/* Add class conditionally */}
         </div>
         <span className="post-meta">
           <span className="inner-meta">

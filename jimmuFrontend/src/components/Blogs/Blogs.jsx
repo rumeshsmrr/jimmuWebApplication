@@ -61,7 +61,7 @@ const Blogs = () => {
 
     return (
         <div className="blogs-container">
-            <h2>Blogs</h2>
+            <h2 className='text-[30px] mt-10 font-bold'>Blogs</h2>
             <div className="scroll-buttons">
                 <button className="scroll-button" onClick={handleScrollLeft}>
                     <FaChevronLeft />
@@ -72,7 +72,7 @@ const Blogs = () => {
             </div>
             <div className="horizontal-scroller">
                 {cardsData.map((card, index) => (
-                    <div className="card" key={index}>
+                    <div className="card2" key={index}>
                         <Card
                             imageUrl={card.imageUrl}
                             title={card.title}
