@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Import useState
+import React, { useState } from 'react';
 import './BlogCard.css'; // Assuming you have the renamed CSS saved in BlogCard.css
 import PropTypes from 'prop-types';
 
@@ -10,7 +10,7 @@ const BlogCard = ({ imageUrl, title, date, excerpt }) => {
   };
 
   return (
-    <div className="card-container">
+    <div className={`card-container ${isExpanded ? 'expanded' : ''}`}>
       <div className="card-image-link">
         <img
           src={imageUrl}
@@ -44,7 +44,6 @@ BlogCard.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
-  
 };
 
 export default BlogCard;

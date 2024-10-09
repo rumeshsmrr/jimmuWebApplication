@@ -1,85 +1,95 @@
 /* Container for the card */
 .card-container {
     background-color: rgba(255, 255, 255, 0.35);
-    padding: 20px; /* Reduced padding for better fitting */
-    margin: 40px 0 60px;
+    padding: 20px;
+    margin: 30px 0 60px;
     border-radius: 25px;
     box-shadow: 0px 36px 60px 0px rgba(23, 14, 100, 0.1);
-    width: 500px; /* Fixed width for horizontal scroll */
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease-in-out;
-    overflow: hidden; /* Hides overflow content */
-    height: 600px; /* Fixed height for uniformity */
+    overflow: hidden;
+    height: 500px;
+    position: relative;
 }
 
-/* Ensuring the card does not change size */
 .card-container:hover {
-    transform: scale(1.05); /* Adds a subtle hover effect */
+    box-shadow: 0px 36px 60px 0px rgba(43, 188, 77, 0.1);
+}
+.card-container.expanded{
+    height: 700px;
+    width: 700px;
+    transition: width 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.card-container:hover {
+    transform: scale(1.05);
 }
 
-/* Styling for the image */
 .card-image-link {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center the image horizontally */
+    display: flex;
+    justify-content: center;
 }
 
 .card-image {
-    width: 100%; /* Keep full width */
-    height: auto; /* Auto height */
+    width: 100%; /* Full width by default */
+    height: auto;
     border-radius: 20px;
     object-fit: cover;
-    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out; /* Add width transition */
+    transition: width 0.2s ease-in-out, transform 0.2s ease-in-out;
+    position: relative;
+    z-index: 1;
 }
 
-/* Expanded state for the image */
 .card-image.expanded {
-    width: 70%; /* Adjust width for expanded state */
+    width: 60%; /* Reduced width in expanded state */
 }
 
-/* Card content area */
 .card-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space between content */
+    justify-content: space-between;
     text-align: left;
-    overflow: hidden; /* Prevents content overflow */
-    flex-grow: 1; /* Allow content to grow and fill space */
+    flex-grow: 1;
 }
 
-/* Card title styling */
 .card-title-link {
-    color: #170e64;
-    text-decoration: none;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center title horizontally */
+    display: flex;
+    justify-content: center;
 }
 
 .card-title {
-    font-size: 1.1em; /* Reduced size for the title */
+    font-size: 1.3em; /* Regular size */
     font-weight: bold;
     margin: 0;
     color: #ffffff;
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis for overflow */
-    white-space: nowrap; /* Prevent text wrapping */
-    background-color: #170e64;
-    height: 60px;
-    padding: 20px 20px 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #42b490;
+    height: 20px;
+    padding: 20px;
     border-radius: 0 0 20px 20px;
     position: relative;
+    
     top: -5px;
-    width: 80%; /* Ensure the title takes full width for centering */
-    text-align: center; /* Center text within the title */
+    width: 80%;
+    text-align: center;
+    transition: font-size 0.2s ease-in-out;
 }
 
-/* Expanded state for the title */
 .card-title.expanded {
-    font-size: 1.3em; /* Slightly increase size for expanded state */
+    font-size: 1em; /* Reduced size in expanded state */
+    width:80%;
+    border-radius: 20px 20px 20px 20px;
+    align-items: center;
+    margin: auto;
+    overflow:auto;
+    text-overfloW:none;
+    white-space: wrap;
 }
 
-/* Meta information (author and date) */
 .post-meta {
     display: flex;
     align-items: center;
@@ -98,38 +108,111 @@
     color: #777;
 }
 
-/* Excerpt */
+/* Excerpt styling */
 .card-excerpt {
-    font-size: 0.95em; /* Regular size */
+    font-size: 0.95em;
     color: #555;
     margin: 15px 0;
     line-height: 1.4;
-    overflow: hidden; /* Hide any overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis for overflow */
-    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-height: 3.2em; /* Show two lines by default */
+    transition: max-height 0.2s ease-in-out, font-size 0.2s ease-in-out;
 }
 
-/* Expanded state for the excerpt */
 .card-excerpt.expanded {
-    font-size: 1.1em; /* Increase size for expanded state */
-    display: block; /* Ensure block display */
-    overflow: visible; /* Allow overflow in expanded state */
-    white-space: normal; /* Allow wrapping */
+    max-height: 250px; /* Fixed height for expanded state */
+    font-size: 1.1em; /* Larger font size in expanded state */
+    overflow-y: auto; /* Enable vertical scrolling for expanded text */
+    white-space: normal;
+    padding-right: 10px; /* Optional: Adds padding for better scrolling experience */
 }
 
-/* Read more button */
+@keyframes gradient-animation {
+    0% {
+        background: linear-gradient(to right, #42b490, #1b929a);
+    }
+    50% {
+        background: linear-gradient(to left, #42b490, #1b929a);
+    }
+    100% {
+        background: linear-gradient(to right, #42b490, #1b929a);
+    }
+}
+
 .read-more-button {
     color: #ffffff;
-    background-color: #ef3273;
+    background: linear-gradient(to right, #42b490, #1b929a);
     padding: 8px 25px;
     border-radius: 100px;
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.2s ease-in-out;
+    transition: background 1s ease-in-out; /* Smooth transition for background */
     font-size: 0.95em;
-    margin-top: auto; /* Pushes the button to the bottom of the card */
+    margin-top: auto;
+    text-align: center;
 }
 
 .read-more-button:hover {
-    background-color: #d22665;
+    animation: gradient-animation 5s ease-in-out infinite; /* Add animation on hover */
+}
+
+/* Tablet styles */
+@media (max-width: 769px) {
+    .card-container {
+        width: 300px;
+        margin: 30px 0 50px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+    }
+
+    .card-excerpt {
+        font-size: 0.95em;
+    }
+    .card-container.expanded{
+        height: auto;
+        width: 300px;
+    }
+    
+    
+}
+/* Default styles (for larger screens) remain as-is */
+
+/* Styles for screens with a maximum width of 430px */
+@media (max-width: 430px) {
+    .card-container {
+        width: 300px; /* Make the card take full width on smaller screens */
+        margin: 20px 0; /* Adjust margins for smaller screens */
+        padding: 15px;
+        height: auto; /* Allow the card to adjust its height */
+    }
+
+    .card-title {
+        font-size: 1.1em; /* Slightly smaller font size for mobile screens */
+    }
+
+    .card-excerpt {
+        font-size: 0.85em; /* Smaller text for better fit */
+        max-height: 4.5em; /* Show more of the excerpt */
+    }
+
+    .read-more-button {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .card-excerpt.expanded {
+       
+        font-size: 0.8em; /* Larger font size in expanded state */
+        
+    }
+    .card-container.expanded{
+        height: auto;
+        width: 300px;
+    }
 }
