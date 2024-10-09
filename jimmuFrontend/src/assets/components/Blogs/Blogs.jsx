@@ -3,22 +3,24 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Importing ico
 import Card from '../BlogCard/BlogCard';
 import './Blogs.css';
 import img1 from '../../images/imag1.png'
+import img2 from '../../images/imag2.jpg'
+import img3 from '../../images/img3.jpg'
 const Blogs = () => {
   const cardsData =[
     {
-        imageUrl: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg',
+        imageUrl: 'https://images.pexels.com/photos/7876050/pexels-photo-7876050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         title: 'Navigating High Net Worth Divorces: Key Considerations',
         date: '10 June 2024',
         content: 'Divorce can be particularly complex for High Net Worth (HNW) individuals due to the intricacies of asset division, financial management, and potential reputational impacts. This article outlines the critical factors to consider, including the importance of obtaining legal advice early. Engaging experienced legal counsel ensures that your interests are protected from the outset. \n\nPrenuptial agreements play a significant role in protecting assets, especially for those with considerable wealth. Understanding how these agreements are enforced in your jurisdiction can save you from lengthy disputes. Additionally, we discuss strategies for preserving wealth, such as separating personal and business assets. Lastly, we emphasize the significance of maintaining privacy throughout the divorce process to shield your reputation and personal life from unnecessary scrutiny.'
     },
     {
-        imageUrl: 'https://images.pexels.com/photos/6721026/pexels-photo-6721026.jpeg',
+        imageUrl: `${img2}`,
         title: 'Understanding Asset Valuation in HNW Divorces',
         date: '15 June 2024',
         content: 'Determining the value of assets in a divorce can be a challenging process, especially for HNW individuals who may have complex portfolios that include multiple properties, investments, and businesses. This guide provides insights into how assets are appraised and the role of forensic accountants in uncovering hidden or undervalued assets. \n\nLearn about the importance of accurately assessing both tangible and intangible assets, from real estate and investments to intellectual property and business interests. Understanding market trends and enlisting professionals who specialize in high net worth divorces can help ensure a fair distribution of assets. This knowledge not only aids in negotiations but also helps you make informed decisions about your financial future post-divorce.'
     },
     {
-        imageUrl: 'https://images.pexels.com/photos/3936484/pexels-photo-3936484.jpeg',
+        imageUrl: `${img3}`,
         title: 'Protecting Your Wealth: Legal Strategies for HNW Divorce',
         date: '20 June 2024',
         content: 'In the event of a divorce, HNW individuals need to implement robust legal strategies to protect their wealth effectively. This article delves into the various legal avenues available, such as mediation, collaborative divorce, and litigation, outlining the pros and cons of each approach. \n\nChoosing the right legal representation is crucial; look for attorneys who have experience with high net worth cases and understand the complexities involved. The role of financial advisors in formulating a comprehensive divorce strategy cannot be underestimated. They help navigate issues like tax implications and asset management during the divorce process. Additionally, we discuss the significance of maintaining documentation and transparency to build a solid case and negotiate effectively.'
