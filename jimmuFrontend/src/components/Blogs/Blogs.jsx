@@ -2,9 +2,9 @@ import React from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Importing icons
 import Card from '../BlogCard/BlogCard';
 import './Blogs.css';
-import img1 from '../../images/imag1.png'
-import img2 from '../../images/imag2.jpg'
-import img3 from '../../images/img3.jpg'
+import img1 from '../../assets/images/imag1.png';
+import img2 from '../../assets/images/imag2.jpg';
+import img3 from '../../assets/images/img3.jpg';
 const Blogs = () => {
   const cardsData =[
     {

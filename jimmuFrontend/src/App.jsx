@@ -1,6 +1,6 @@
 
 import './App.css'
-import Blogs from './assets/components/Blogs/Blogs'
+import Blogs from './components/Blogs/Blogs'
 function App() {
   
 
